@@ -20,6 +20,6 @@ Revolutionizing food tracking with wearable technology through AI driven recipes
 1. Create a folder on your local computer to hold the repo.
 2. Clone the repository:
    ```bash
-   git clone https://github.com/HRPTechAdvisor/ThePortalHealthCompanion.git
+   git clone https://github.com/BiFrostCollective/ThePortalHealthCompanion.git
 
 
