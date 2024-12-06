@@ -13,8 +13,6 @@ import com.example.theportalexperience.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    //Commenting work to try and test purposes
-    //More testing
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
