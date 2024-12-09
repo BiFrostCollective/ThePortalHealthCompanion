@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 # Compiled class file
 *.class
 
@@ -39,4 +39,15 @@ replay_pid*
 .externalNativeBuild
 .cxx
 local.properties
->>>>>>> source/pullingbranch
+source/pullingbranch
+Testing
+.name
+
+/app/src/main/res/values/attrs.xml
+/app/src/main/res/navigation/bottom_nav.xml
+/app/src/main/java/com/example/theportalexperience/FirstFragment.kt
+/app/src/main/res/layout/fragment_first.xml
+/app/src/main/res/layout/fragment_second.xml
+/app/src/main/java/com/example/theportalexperience/SecondFragment.kt
+/app/src/main/res/values/styles.xml
+Robert-Dev
