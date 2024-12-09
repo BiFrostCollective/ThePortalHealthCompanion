@@ -22,10 +22,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
     }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
 }
