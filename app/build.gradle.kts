@@ -58,5 +58,3 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics:22.1.2")
 }
 
-    // Apply Google Services Plugin
-    apply(plugin = "com.google.gms.google-services")
