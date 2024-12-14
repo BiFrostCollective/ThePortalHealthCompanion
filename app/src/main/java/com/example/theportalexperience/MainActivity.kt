@@ -12,6 +12,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.replace
 import com.example.theportalexperience.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,24 +24,43 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater    )
+        setContentView(binding.root)
 
-        val button1: Button = findViewById(R.id.button1)
-        button1.setOnClickListener {
-            val intent = Intent(this, PersonalHealthActivity::class.java)
-            startActivity(intent)
+
+        binding.navBottom.setOnItemSelectedListener {
+            when (it.itemId){
+                R.id.home -> {
+                    replaceFragment(Home())
+                }
+                R.id.settings -> {
+                    replaceFragment(Settings())
+                }
+
+                else -> {
+
+                }
+            }
+            true
         }
 
         val button2: Button = findViewById(R.id.button2)
         button2.setOnClickListener {
-            val intent = Intent(this, AdvancedFoodActivity::class.java)
+            val intent = Intent(this, AdvancedFoodFragment::class.java)
             startActivity(intent)
         }
 
         val button3: Button = findViewById(R.id.button3)
         button3.setOnClickListener {
-            val intent = Intent(this, RecipeAndDietActivity::class.java)
+            val intent = Intent(this, RecipeAndDietFragment::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun replaceFragment(fragment: Fragment){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout, fragment)
+        fragmentTransaction.commit()
     }
 }
