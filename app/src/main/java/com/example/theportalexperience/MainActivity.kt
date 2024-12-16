@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater    )
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -46,13 +46,13 @@ class MainActivity : AppCompatActivity() {
 
         val button2: Button = findViewById(R.id.button2)
         button2.setOnClickListener {
-            val intent = Intent(this, AdvancedFoodFragment::class.java)
+            val intent = Intent(this, AdvancedFoodActivity::class.java)
             startActivity(intent)
         }
 
         val button3: Button = findViewById(R.id.button3)
         button3.setOnClickListener {
-            val intent = Intent(this, RecipeAndDietFragment::class.java)
+            val intent = Intent(this, RecipeAndDietActivity::class.java)
             startActivity(intent)
         }
     }
