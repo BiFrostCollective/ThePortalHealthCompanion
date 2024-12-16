@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AdvancedFoodFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/advanced_food"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    <!-- VideoView at the Top -->
 
-</FrameLayout>
+    <!-- Food Inventory Button -->
+    <VideoView
+        android:id="@+id/foodVideoView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Scan My Food Button -->
+    <Button
+        android:id="@+id/btnFoodInventory"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Food Inventory"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodVideoView" />
+
+    <!-- Manual Entry Button -->
+    <Button
+        android:id="@+id/btnScanFood"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Scan my Food"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodVideoView" />
+
+    <!-- Daily Intake Values Button -->
+
+    <Button
+        android:id="@+id/btnManualEntry"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="96dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Manual Entry"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/btnScanFood"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toEndOf="@+id/btnFoodInventory"
+        app:layout_constraintTop_toBottomOf="@+id/btnFoodInventory" />
+
+    <Button
+        android:id="@+id/btnDailyIntake"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="72dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Daily intake values"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnManualEntry" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

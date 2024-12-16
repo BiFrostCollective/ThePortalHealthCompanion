@@ -1,26 +1,25 @@
 package com.example.theportalexperience
 
+import android.net.Uri
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class AdvancedFoodActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_advanced_food)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        setContentView(R.layout.fragment_advanced_food)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AdvancedFoodFragment())
-                .commit()
+        // Reference the VideoView and set up the video
+        val videoView: VideoView = findViewById(R.id.foodVideoView)
+        val videoPath = "android.resource://${packageName}/raw/food_video" // Path to video in raw folder
+        videoView.setVideoURI(Uri.parse(videoPath))
+
+        // Start video and loop it
+        videoView.setOnPreparedListener { mediaPlayer ->
+            mediaPlayer.isLooping = true
+            videoView.start()
         }
     }
 }
+
