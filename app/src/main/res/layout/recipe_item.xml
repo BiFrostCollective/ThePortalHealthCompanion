@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_advanced_food.xml
+
+    Purpose:
+    This layout file is designed for the Advanced Food Activity screen in our app.
+    It contains a RecyclerView that will display a list of recipes, allowing users
+    to scroll through and view various food options. Additionally, this layout
+    includes a BottomNavigationView for easy navigation between different sections of the app,
+    and a FrameLayout that will be used to dynamically load fragments into the activity.
+
+    Why we're adding it:
+    - The RecyclerView will provide an interactive list of recipes, which is an essential feature for
+      the Advanced Food Activity, as it will allow users to explore and select recipes.
+    - The BottomNavigationView ensures a consistent navigation experience across the app.
+    - The FrameLayout serves as a container for dynamically loading fragments, which allows us to
+      display different content without navigating away from the current screen.
+
+    This file will be part of the layout for the Advanced Food Activity and is a key step in implementing
+    the food browsing and recipe interaction feature.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav"/>
+        app:menu="@menu/bottom_nav" />
 
     <!-- FrameLayout to load fragments -->
     <FrameLayout
@@ -24,7 +44,8 @@
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navBottom" />
 
     <!-- RecyclerView for displaying recipes -->
     <androidx.recyclerview.widget.RecyclerView
@@ -34,6 +55,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/navBottom" />
+        app:layout_constraintBottom_toTopOf="@id/frame_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
