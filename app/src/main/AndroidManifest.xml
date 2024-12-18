@@ -26,9 +26,6 @@
             android:name=".AdvancedFoodActivity"
             android:exported="false" />
         <activity
-            android:name=".PersonalHealthActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignInActivity"
             android:exported="true"
             android:theme="@style/Theme.ThePortalExperience">
