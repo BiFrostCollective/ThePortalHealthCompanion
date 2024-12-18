@@ -4,12 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
-import android.widget.TextView
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,19 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         mAuth = FirebaseAuth.getInstance()
-        val textView = findViewById<TextView>(R.id.name)
-        val auth = Firebase.auth
-        val user = auth.currentUser
-
-        if (user != null){
-            val userName = user.displayName
-            textView.text = "Welcome, $userName"
-        }
-        else{
-            // handle the guest login here
-        }
 
         val button2: Button = findViewById(R.id.button1)
         button2.setOnClickListener {
@@ -58,8 +44,11 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.settings -> {
-                    val intent = Intent(this, Settings::class.java)
-                    startActivity(intent)
+                    val fragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
                     true
                 }
                 R.id.back -> {

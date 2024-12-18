@@ -1,6 +1,6 @@
 package com.example.theportalexperience
 
-import android.content.Intent
+
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,12 +22,16 @@ class RecipeAndDietActivity : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
+                    finish()
                     // Already in FirstActivity
                     true
                 }
                 R.id.settings -> {
-                    val intent = Intent(this, Settings::class.java)
-                    startActivity(intent)
+                    val fragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
                     true
                 }
                 R.id.back -> {
