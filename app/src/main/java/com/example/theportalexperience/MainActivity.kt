@@ -5,9 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -21,13 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Variable declarations for Authentication
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
+
         mAuth = FirebaseAuth.getInstance()
-        mGoogleSignInClient = GoogleSignIn.getClient(this,gso)
         val textView = findViewById<TextView>(R.id.name)
         val auth = Firebase.auth
         val user = auth.currentUser
@@ -56,11 +50,29 @@ class MainActivity : AppCompatActivity() {
             signOutAndStartSignInActivity()
         }
 
+        val bottomNav = findViewById<BottomNavigationView>(R.id.navBottom)
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    // Already in FirstActivity
+                    true
+                }
+                R.id.settings -> {
+                    val intent = Intent(this, Settings::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.back -> {
+                    // add back button functionality
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun signOutAndStartSignInActivity(){
         mAuth.signOut()
-
         mGoogleSignInClient.signOut().addOnCompleteListener(this){
             val intent = Intent(this@MainActivity, SignInActivity::class.java)
             startActivity(intent)
