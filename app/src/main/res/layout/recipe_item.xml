@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- The TextView for displaying the recipe name -->
     <TextView
-        android:id="@+id/advanced_food"
-        android:gravity="center"
+        android:id="@+id/recipeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/advanced_food"
-        android:textSize="26sp"
-        android:layout_gravity="center_horizontal" />
+        android:text="Recipe Name"
+        android:textSize="18sp"
+        android:textColor="@android:color/black" />
+
+    <!-- You can add other views here for descriptions, images, etc. -->
 
 </LinearLayout>

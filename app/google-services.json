@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "325899981758",
+    "project_id": "the-portal-health-companion",
+    "storage_bucket": "the-portal-health-companion.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325899981758:android:94f6db80f1419bf1eb5fef",
+        "android_client_info": {
+          "package_name": "com.example.theportalexperience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325899981758-0a9vgloi9jftt9gc28smri38f1716c69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.theportalexperience",
+            "certificate_hash": "4dfe4d793bd2764a16648bf2d9913c0c8e442e7a"
+          }
+        },
+        {
+          "client_id": "325899981758-p08u0b25brq23345knns3cujg9kj1fv3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8N-182yhFyBLj--ypyeg041F_BdneINQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325899981758-p08u0b25brq23345knns3cujg9kj1fv3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
