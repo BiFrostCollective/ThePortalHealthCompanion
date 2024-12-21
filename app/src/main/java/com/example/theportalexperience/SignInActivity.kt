@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 
 class SignInActivity : AppCompatActivity() {
 
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var emailPasswordHelper: EmailPasswordHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
