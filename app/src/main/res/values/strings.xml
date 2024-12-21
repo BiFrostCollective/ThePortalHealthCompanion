@@ -1,6 +1,11 @@
 <resources>
+    <string name="welcome_message">Welcome, %1$s</string>
+    <string name="home">Home</string>
+    <string name="back">Back</string>
+    <string name="welcome">Welcome</string>
     <string name="app_name">ThePortalExperience</string>
     <string name="action_settings">Settings</string>
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
