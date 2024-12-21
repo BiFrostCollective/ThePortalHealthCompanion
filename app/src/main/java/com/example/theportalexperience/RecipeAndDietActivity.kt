@@ -1,10 +1,12 @@
 package com.example.theportalexperience
 
+
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RecipeAndDietActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,11 +18,29 @@ class RecipeAndDietActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, RecipeAndDietFragment())
-                .commit()
+        val bottomNav = findViewById<BottomNavigationView>(R.id.navBottom)
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    finish()
+                    // Already in FirstActivity
+                    true
+                }
+                R.id.settings -> {
+                    val fragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
+                R.id.back -> {
+                    // add back button functionality
+                    finish()
+                    true
+                }
+                else -> false
+            }
         }
     }
 }

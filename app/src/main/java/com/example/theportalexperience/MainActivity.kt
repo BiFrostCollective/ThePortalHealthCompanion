@@ -2,35 +2,25 @@ package com.example.theportalexperience
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Button
-import android.widget.Toast
-import com.example.theportalexperience.databinding.ActivityMainBinding
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+
 
 class MainActivity : AppCompatActivity() {
 
-
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button1: Button = findViewById(R.id.button1)
-        button1.setOnClickListener {
-            val intent = Intent(this, PersonalHealthActivity::class.java)
-            startActivity(intent)
-        }
+        mAuth = FirebaseAuth.getInstance()
 
-        val button2: Button = findViewById(R.id.button2)
+        val button2: Button = findViewById(R.id.button1)
         button2.setOnClickListener {
             val intent = Intent(this, AdvancedFoodActivity::class.java)
             startActivity(intent)
@@ -41,5 +31,42 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RecipeAndDietActivity::class.java)
             startActivity(intent)
         }
+        val signOutButton = findViewById<Button>(R.id.logout_button)
+        signOutButton.setOnClickListener {
+            signOutAndStartSignInActivity()
+        }
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.navBottom)
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    // Already in FirstActivity
+                    true
+                }
+                R.id.settings -> {
+                    val fragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                    true
+                }
+                R.id.back -> {
+                    // add back button functionality
+                    true
+                }
+                else -> false
+            }
+        }
     }
+
+    private fun signOutAndStartSignInActivity(){
+        mAuth.signOut()
+        mGoogleSignInClient.signOut().addOnCompleteListener(this){
+            val intent = Intent(this@MainActivity, SignInActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
 }
