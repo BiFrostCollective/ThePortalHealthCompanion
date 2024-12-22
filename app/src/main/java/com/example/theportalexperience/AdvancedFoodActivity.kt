@@ -14,22 +14,26 @@ class AdvancedFoodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_advanced_food)
 
-        // Reference the VideoView and set up the video
-        val videoView: VideoView = findViewById(R.id.foodVideoView)
-        val videoPath = "android.resource://${packageName}/raw/food_video" // Path to video in raw folder
-        videoView.setVideoURI(Uri.parse(videoPath))
+        try {
+            // Reference the VideoView and set up the video
+            val videoView: VideoView = findViewById(R.id.foodVideoView)
+            val videoPath = "android.resource://${packageName}/raw/food_video"
+            videoView.setVideoURI(Uri.parse(videoPath))
 
-        // Scan My Food button
-        val scanButton = findViewById<Button>(R.id.btnScanMyFood)
-        scanButton.setOnClickListener {
-            val intent = Intent(this, FoodScannerActivity::class.java)
-            startActivity(intent)
-        }
+            // Start video and loop it
+            videoView.setOnPreparedListener { mediaPlayer ->
+                mediaPlayer.isLooping = true
+                videoView.start()
+            }
 
-        // Start video and loop it
-        videoView.setOnPreparedListener { mediaPlayer ->
-            mediaPlayer.isLooping = true
-            videoView.start()
+            // Scan My Food button
+            val scanButton = findViewById<Button>(R.id.btnScanFood)
+            scanButton.setOnClickListener {
+                val intent = Intent(this, FoodScannerActivity::class.java)
+                startActivity(intent)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace() // Log the exception to see the root cause
         }
-    } // End of onCreate
-} // End of AdvancedFoodActivity class
+    }
+}
