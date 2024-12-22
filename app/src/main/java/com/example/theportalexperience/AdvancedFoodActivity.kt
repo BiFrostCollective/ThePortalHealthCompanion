@@ -1,45 +1,35 @@
 package com.example.theportalexperience
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class AdvancedFoodActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_advanced_food)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(R.layout.fragment_advanced_food)
+
+        // Reference the VideoView and set up the video
+        val videoView: VideoView = findViewById(R.id.foodVideoView)
+        val videoPath = "android.resource://${packageName}/raw/food_video" // Path to video in raw folder
+        videoView.setVideoURI(Uri.parse(videoPath))
+
+        // Scan My Food button
+        val scanButton = findViewById<Button>(R.id.btnScanMyFood)
+        scanButton.setOnClickListener {
+            val intent = Intent(this, FoodScannerActivity::class.java)
+            startActivity(intent)
         }
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.navBottom)
-        bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.home -> {
-                    finish()// Already in FirstActivity
-                    true
-                }
-                R.id.settings -> {
-                    val fragment = SettingsFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame_layout, fragment)
-                        .addToBackStack(null)
-                        .commit()
-                    true
-                }
-                R.id.back -> {
-                    // add back button functionality
-                    finish()
-                    true
-                }
-                else -> false
-            }
+        // Start video and loop it
+        videoView.setOnPreparedListener { mediaPlayer ->
+            mediaPlayer.isLooping = true
+            videoView.start()
         }
-    }
-}
+    } // End of onCreate
+} // End of AdvancedFoodActivity class
