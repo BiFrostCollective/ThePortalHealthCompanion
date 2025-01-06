@@ -48,7 +48,11 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home -> true
                 R.id.settings -> {
-                    // Handle settings navigation
+                    val fragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame_layout, fragment)
+                        .addToBackStack(null)
+                        .commit()
                     true
                 }
                 R.id.back -> {

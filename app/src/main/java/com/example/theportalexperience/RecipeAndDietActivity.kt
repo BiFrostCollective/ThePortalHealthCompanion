@@ -21,7 +21,6 @@ class RecipeAndDietActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home -> {
                     finish()
-                    // Already in FirstActivity
                     true
                 }
                 R.id.settings -> {
@@ -33,7 +32,6 @@ class RecipeAndDietActivity : AppCompatActivity() {
                     true
                 }
                 R.id.back -> {
-                    // add back button functionality
                     finish()
                     true
                 }

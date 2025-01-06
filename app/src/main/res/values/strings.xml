@@ -27,4 +27,5 @@
     <string name="scan_my_food">Scan my Food</string>
     <string name="manual_entry">Manual Entry</string>
     <string name="daily_intake_values">Daily intake values</string>
+    <string name="save">Save</string>
 </resources>
