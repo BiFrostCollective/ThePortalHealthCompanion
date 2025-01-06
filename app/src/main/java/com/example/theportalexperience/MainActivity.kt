@@ -26,14 +26,14 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth = Firebase.auth
         googleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN)
 
-        val button1 = findViewById<Button>(R.id.button1)
-        button1.setOnClickListener {
+        val aFoodButton = findViewById<Button>(R.id.foodButton)
+        aFoodButton.setOnClickListener {
             val intent = Intent(this, AdvancedFoodActivity::class.java)
             startActivity(intent)
         }
 
-        val button3 = findViewById<Button>(R.id.button3)
-        button3.setOnClickListener {
+        val recipeButton = findViewById<Button>(R.id.recipeButton)
+        recipeButton.setOnClickListener {
             val intent = Intent(this, RecipeAndDietActivity::class.java)
             startActivity(intent)
         }
