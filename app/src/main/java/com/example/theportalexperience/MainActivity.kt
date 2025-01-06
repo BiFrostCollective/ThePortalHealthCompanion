@@ -4,16 +4,22 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+
 class MainActivity : AppCompatActivity() {
+    val database = Firebase.database
 
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
@@ -25,6 +31,17 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth = Firebase.auth
         googleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN)
+
+        // Initialize Google SignInClient
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.web_client_id))
+            .requestEmail()
+            .build()
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        mAuth = FirebaseAuth.getInstance()
+
 
         val aFoodButton = findViewById<Button>(R.id.foodButton)
         aFoodButton.setOnClickListener {
@@ -50,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.settings -> {
                     val fragment = SettingsFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame_layout, fragment)
+                        .replace(R.id.FrameLayout, fragment)
                         .addToBackStack(null)
                         .commit()
                     true

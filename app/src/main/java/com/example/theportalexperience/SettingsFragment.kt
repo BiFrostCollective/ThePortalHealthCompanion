@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.enableEdgeToEdge
 import com.example.theportalexperience.R.layout.fragment_settings
 
 
 class SettingsFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,3 +26,5 @@ class SettingsFragment : Fragment() {
     }
 
 }
+
+// supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)

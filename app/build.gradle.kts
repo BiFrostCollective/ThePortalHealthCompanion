@@ -43,9 +43,27 @@ android {
 }
 
 dependencies {
+
     // Firebase dependencies
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
     implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.mediarouter)
+    implementation(libs.androidx.activity)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.google.android.gms:play-services-auth:20.5.0") // Google Sign-In library
+    implementation("androidx.appcompat:appcompat:1.7.0")
+
 
     // Google Sign-In
     implementation("com.google.android.gms:play-services-auth:20.7.0")
