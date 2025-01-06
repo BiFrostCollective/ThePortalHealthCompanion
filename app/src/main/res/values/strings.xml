@@ -22,5 +22,9 @@
     <string name="email">Email</string>
     <string name="create_account">Create Account</string>
 
-
+    <!-- Added strings for fragment_advanced_food.xml -->
+    <string name="food_inventory">Food Inventory</string>
+    <string name="scan_my_food">Scan my Food</string>
+    <string name="manual_entry">Manual Entry</string>
+    <string name="daily_intake_values">Daily intake values</string>
 </resources>
