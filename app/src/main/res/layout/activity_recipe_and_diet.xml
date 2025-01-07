@@ -48,12 +48,44 @@
     <!-- Added Search Button -->
     <Button
         android:id="@+id/searchButton"
-        android:laout_width="wrap_content"
-        android:layout_hieght="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Search"
         app:layout_constraintTop_toBottomOf="@id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"  />
+        app:layout_constraintHorizontal_bias="0.95" />
+
+    <!-- Added the Tab-like Interface -->
+    <LinearLayout
+        android:id="@+id/tabContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/searchButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Courses" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Categories" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Favorites" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/frame_layout"
