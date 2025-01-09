@@ -12,12 +12,13 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
-        google()
-        mavenCentral()
+        google() // Google's Maven repository
+        mavenCentral() // Central Maven repository
     }
 }
+
 
 rootProject.name = "ThePortalExperience"
 include(":app")
