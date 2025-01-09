@@ -8,7 +8,6 @@
     <style name="Theme.ThePortalExperience" parent="Base.Theme.ThePortalExperience" />
 
     <style name="ThemeOverlay.ThePortalExperience.FullscreenContainer" parent="">
-        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
 </resources>

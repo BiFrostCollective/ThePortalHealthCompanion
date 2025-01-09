@@ -4,14 +4,16 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.auth.auth
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,14 +28,15 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth = Firebase.auth
         googleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN)
 
-        val button1 = findViewById<Button>(R.id.button1)
-        button1.setOnClickListener {
+
+        val aFoodButton = findViewById<Button>(R.id.foodButton)
+        aFoodButton.setOnClickListener {
             val intent = Intent(this, AdvancedFoodActivity::class.java)
             startActivity(intent)
         }
 
-        val button3 = findViewById<Button>(R.id.button3)
-        button3.setOnClickListener {
+        val recipeButton = findViewById<Button>(R.id.recipeButton)
+        recipeButton.setOnClickListener {
             val intent = Intent(this, RecipeAndDietActivity::class.java)
             startActivity(intent)
         }
@@ -48,11 +51,14 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home -> true
                 R.id.settings -> {
-                    // Handle settings navigation
+                    val fragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.FrameLayout, fragment)
+                        .addToBackStack(null)
+                        .commit()
                     true
                 }
                 R.id.back -> {
-                    onBackPressed()
                     true
                 }
                 else -> false

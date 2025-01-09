@@ -21,19 +21,17 @@ class RecipeAndDietActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home -> {
                     finish()
-                    // Already in FirstActivity
                     true
                 }
                 R.id.settings -> {
                     val fragment = SettingsFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame_layout, fragment)
+                        .replace(R.id.FrameLayout, fragment)
                         .addToBackStack(null)
                         .commit()
                     true
                 }
                 R.id.back -> {
-                    // add back button functionality
                     finish()
                     true
                 }
