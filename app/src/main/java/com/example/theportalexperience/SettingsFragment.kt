@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import com.example.theportalexperience.R.layout.fragment_settings
 
@@ -17,7 +18,7 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(fragment_settings, container, false)
-        val saveButton: Button = view.findViewById(R.id.save)
+        val saveButton: ImageButton = view.findViewById(R.id.backButton)
         saveButton.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
