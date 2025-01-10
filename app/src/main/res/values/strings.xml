@@ -20,4 +20,6 @@
     <string name="daily_intake_values">Daily intake values</string>
     <string name="save">Save</string>
     <string name="picture">picture</string>
+    <string name="button">Button</string>
+    <string name="dropdown">dropdown</string>
 </resources>
