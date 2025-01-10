@@ -26,7 +26,7 @@ class RecipeAndDietActivity : AppCompatActivity() {
                 R.id.settings -> {
                     val fragment = SettingsFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.FrameLayout, fragment)
+                        .replace(R.id.frame_layout, fragment)
                         .addToBackStack(null)
                         .commit()
                     true
