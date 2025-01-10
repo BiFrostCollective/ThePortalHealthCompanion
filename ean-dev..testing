@@ -1,0 +1,62 @@
+[33mb0a7ad7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mTesting[m[33m, [m[1;31morigin/Testing[m[33m, [m[1;31morigin/Sean-Dev[m[33m, [m[1;32mSean-Dev[m[33m)[m Resolved merge conflicts
+[33mbb5c0d3[m Added RecyclerView for displaying recipes, improved UI layout with BottomNavigationView and FrameLayout. Updated RecipeAdapter to bind recipe data to the RecyclerView items.
+[33m9980cb9[m Updated recipe_item.xml layout and made additional changes to activity layouts for recipes and diet
+[33m90f2377[m Merge pull request #23 from BiFrostCollective/Robert-Dev
+[33m8e2f5b1[m Merge branch 'Testing' into Robert-Dev
+[33m4bde145[m Merge remote-tracking branch 'origin/Robert-Dev' into Robert-Dev
+[33m0c1f526[m Missed files in my commit so pushing again
+[33m9ef87d0[m Merge pull request #22 from BiFrostCollective/Robert-Dev
+[33m6645776[m Added RecyclerView for recipe list, need to fix bottom navigation and fragment loading.
+[33m76b8b6d[m Merge branch 'Testing' into Robert-Dev
+[33m635f9b0[m Implementation of Firebase account creation using email and password.
+[33m1c7fe3e[m Dependencies and Settings all finalized and set for a successful build
+[33m88c37f7[m Merge pull request #21 from BiFrostCollective/Robert-Dev
+[33me761e54[m[33m ([m[1;31morigin/Robert-Dev[m[33m)[m Clearing out the files for Firebase issues we were having
+[33m295a8ed[m Merge pull request #20 from BiFrostCollective/Testing
+[33mddd5fa1[m Merge branch 'Robert-Dev' into Testing
+[33mb0843a6[m Merge pull request #18 from BiFrostCollective/Veronica-Dev
+[33m879eeb1[m[33m ([m[1;31morigin/Veronica-Dev[m[33m)[m fixed around the UI and added text
+[33m9571379[m Got the initial setup of the nav bottom bar done. Buttons do not work yet and the activities over lap it
+[33m92b9392[m Resolved dependency issues and updated build.gradle.kts
+[33md6fc435[m Commit message for any pending changes
+[33m41f99cb[m Fix plugin configuration and apply Google Services plugin
+[33m40e1d46[m Update .gitignore to ignore google-services.json and modify AndroidManifest.xml
+[33mdbebf2e[m Add google-services.json to .gitignore
+[33mca80007[m Add package name to AndroidManifest.xml
+[33me6b9750[m Merge pull request #12 from BiFrostCollective/Testing
+[33m549a21f[m Merge pull request #13 from BiFrostCollective/Testing
+[33m2713f32[m Merge branch 'Robert-Dev' into Testing
+[33ma9c507c[m Update README.md
+[33mc8cf6aa[m Update README.md
+[33m4b4c295[m Update main.yml changed JDK
+[33mdb22906[m Update main.yml Updated JDK
+[33mb6680b0[m Update main.yml CI script
+[33mfa6cbef[m Update main.yml for CI
+[33m35c008c[m Got an activity and fragment created and launched when specific button is pressed on the home screen
+[33mf3ffabe[m Getting Testing branch back in working order.
+[33mcf7a702[m Merge branch 'Sean-Dev' into Testing
+[33m4800644[m Work in progress: Update .idea files and gitignore
+[33mf03f4bd[m Showing basics
+[33m47e2fba[m Merge pull request #11 from BiFrostCollective/Robert-Dev
+[33mfedaba4[m Showing basics
+[33m8197dc4[m Merge pull request #10 from BiFrostCollective/Robert-Dev
+[33m22f33b7[m Basic Launch to the Home Screen with three buttons that need to be made clickable
+[33m8a210e0[m Getting running system up and running
+[33m9e39b53[m Getting running system up and running
+[33mbf1ccb5[m Merge pull request #8 from BiFrostCollective/dev
+[33m07b822c[m Merge pull request #7 from BiFrostCollective/main
+[33mb1184b1[m Merge pull request #6 from BiFrostCollective/personal-dev
+[33m8bdce9f[m Merge pull request #5 from BiFrostCollective/main
+[33m8dd216d[m Merge remote-tracking branch 'source/pullingbranch'
+[33mf51a050[m Merge pull request #3 from BiFrostCollective/HRPTechAdvisor-patch-1
+[33m1de3ae8[m First Push
+[33m6364963[m Update README.md
+[33m9507071[m Merge pull request #2 from BiFrostCollective/Palmarino1025-ReadmeEdit
+[33md03daf6[m Update README.md
+[33me6ddda4[m Create README.md
+[33mf251516[m Add CONTRIBUTORS.md file
+[33m3dc1c6a[m Add API documentation / Created API.md
+[33m38a3e38[m Set up CI/CD pipeline / Created main.yml
+[33m2bbe234[m Create CONTRIBUTING.md
+[33mb5814bb[m Update issue templates
+[33mc623122[m Initial commit
