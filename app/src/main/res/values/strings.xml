@@ -22,4 +22,8 @@
     <string name="picture">picture</string>
     <string name="button">Button</string>
     <string name="dropdown">dropdown</string>
+    <string name="profile_details">Profile Details</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="cancel">Cancel</string>
 </resources>
