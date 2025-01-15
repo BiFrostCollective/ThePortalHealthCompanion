@@ -10,12 +10,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+
+import com.google.firebase.auth.auth
 
 
 class MainActivity : AppCompatActivity() {
-
 
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
@@ -53,13 +52,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.settings -> {
                     val fragment = SettingsFragment()
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.FrameLayout, fragment)
+                        .replace(R.id.frame_layout, fragment)
                         .addToBackStack(null)
                         .commit()
                     true
                 }
                 R.id.back -> {
-                    onBackPressed()
                     true
                 }
                 else -> false

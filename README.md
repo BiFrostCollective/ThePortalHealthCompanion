@@ -5,7 +5,7 @@ Revolutionizing food tracking with wearable technology through AI driven recipes
 
 ## Features
 - **Food Tracking**: Log and track your daily food intake.
-- **Recipe Suggestions**: Suggesting recipes to help with health improvment
+- **Recipe Suggestions**: Suggesting recipes to help with health improvement
 - **Health Insights**: Get personalized health insights based on your data.
 - **Wearable Integration**: Sync with wearable devices for real-time tracking.
 - **User-Friendly Interface**: Easy-to-use interface for all age groups.
