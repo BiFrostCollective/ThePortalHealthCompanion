@@ -16,9 +16,8 @@ dependencyResolutionManagement {
     repositories {
         google() // Google's Maven repository
         mavenCentral() // Central Maven repository
+        maven { url = uri("https://jitpack.io") } // JitPack repository
     }
 }
-
-
 rootProject.name = "ThePortalExperience"
 include(":app")

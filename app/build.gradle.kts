@@ -51,6 +51,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
     implementation("androidx.mediarouter:mediarouter:1.2.0")
     implementation("androidx.activity:activity-ktx:1.7.2")
+    implementation("com.github.yuriy-budiyev:code-scanner:2.3.0")
 
     // Firebase dependencies
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))

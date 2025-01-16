@@ -47,8 +47,7 @@
         <!-- Declare FoodScannerActivity -->
         <activity
             android:name=".FoodScannerActivity"
-            android:exported="true" />
-
+            android:exported="false" />
     </application>
 
 </manifest>
