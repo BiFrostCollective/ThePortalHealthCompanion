@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.button.MaterialButton
 
 class RecipeAndDietActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,12 @@ class RecipeAndDietActivity : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+
+        // (SS) Adding click listener for the search button
+        val searchButton = findViewById<MaterialButton>(R.id.searchButton)
+        searchButton.setOnClickListenern {
+            val searchFragment = SearchFragment()
         }
     }
 }
