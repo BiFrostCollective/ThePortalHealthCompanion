@@ -24,10 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        firebaseAuth = Firebase.auth
-        googleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN)
-
-
         val aFoodButton = findViewById<Button>(R.id.foodButton)
         aFoodButton.setOnClickListener {
             val intent = Intent(this, AdvancedFoodActivity::class.java)
