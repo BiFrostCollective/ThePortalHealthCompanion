@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseUser
 class AccountCreationActivity : AppCompatActivity() {
 
     private lateinit var emailPasswordHelper: EmailPasswordHelper
+    var verified: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class AccountCreationActivity : AppCompatActivity() {
         val passwordField = findViewById<EditText>(R.id.passwordField)
         val createAccountButton = findViewById<Button>(R.id.createAccountButton)
 
+
         createAccountButton.setOnClickListener {
             val email = emailField.text.toString().trim()
             val password = passwordField.text.toString().trim()
@@ -30,7 +32,8 @@ class AccountCreationActivity : AppCompatActivity() {
                 emailPasswordHelper.createAccount(email, password) { user: FirebaseUser? ->
                     if (user != null) {
                         Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
-                        navigateToMainActivity()
+                        continueProfile()
+                        verified = true
                     } else {
                         Toast.makeText(this, "Account creation failed.", Toast.LENGTH_SHORT).show()
                     }
@@ -39,9 +42,17 @@ class AccountCreationActivity : AppCompatActivity() {
                 Toast.makeText(this, "Email and password cannot be empty.", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
-    private fun navigateToMainActivity() {
+    private fun continueProfile() {
+        val fragment = ProfileDetailsFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame_layout, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+    private fun moveToMain() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
