@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN)
 
-
         val aFoodButton = findViewById<Button>(R.id.foodButton)
         aFoodButton.setOnClickListener {
             val intent = Intent(this, AdvancedFoodActivity::class.java)
