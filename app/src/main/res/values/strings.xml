@@ -19,7 +19,10 @@
     <string name="manual_entry">Manual Entry</string>
     <string name="daily_intake_values">Daily intake values</string>
     <string name="save">Save</string>
-    <string name="picture">picture</string>
+    <string name="picture">Image of recipe category</string>
     <string name="button">Button</string>
     <string name="dropdown">dropdown</string>
+
+    <!--SS Added these new strings for the search button SS-->
+    <string name="search_button_description">Search for recipes</string>
 </resources>
