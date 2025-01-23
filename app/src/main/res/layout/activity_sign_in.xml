@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/login_gradient"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
 
     <!-- Title -->
     <TextView
@@ -13,9 +15,11 @@
         android:layout_height="wrap_content"
         android:text="@string/sign_in"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         android:layout_gravity="center"
-        android:paddingBottom="16dp"/>
+        android:textColor="@color/white"
+        android:paddingBottom="16dp"
+        android:paddingTop="24dp"/>
 
     <!-- Email Input -->
     <EditText
@@ -25,11 +29,19 @@
         android:autofillHints=""
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="8dp"/>
+        android:background="@android:drawable/editbox_background" />
 
     <!-- Password Input -->
+    <Button
+        android:id="@+id/forgot_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:paddingStart="4dp"
+        android:paddingEnd="0dp"
+        android:text="@string/forgot_email"
+        android:textColor="#EDEDED" />
+
     <EditText
         android:id="@+id/passwordField"
         android:layout_width="match_parent"
@@ -38,8 +50,17 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="16dp"/>
+        android:background="@android:drawable/editbox_background" />
+
+    <Button
+        android:id="@+id/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:textColor="#EDEDED"
+        android:paddingStart="4dp"
+        android:paddingEnd="0dp"
+        android:backgroundTint="@android:color/transparent"/>
 
     <!-- Sign In Button -->
     <Button
@@ -57,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/create_an_account"
-        android:textColor="@color/purple"
+        android:textColor="#EDEDED"
         android:backgroundTint="@android:color/transparent"/>
 
 </LinearLayout>
