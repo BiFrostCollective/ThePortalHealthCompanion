@@ -5,11 +5,15 @@
     android:layout_height="match_parent"
     android:id="@+id/frame_layout"
     android:orientation="vertical"
+    android:background="@drawable/login_gradient"
     android:padding="16dp">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        >
         <!-- Title -->
         <TextView
             android:id="@+id/titleTextView"
@@ -19,6 +23,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center"
+            android:textColor="@color/white"
             android:paddingBottom="16dp"/>
 
         <!-- Email Input -->
@@ -45,13 +50,74 @@
             android:background="@android:drawable/editbox_background"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Create Account Button -->
-        <Button
-            android:id="@+id/createAccountButton"
+        <EditText
+            android:id="@+id/confirmPasswordField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:text="@string/profile_details"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"/>
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="45dp"
+        >
+        <Button
+            android:id="@+id/createAccountButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/purple"
-            android:text="@string/create_account"
+            android:text="@string/save"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="100dp"/>
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple"
+            android:text="@string/cancel"
             android:textColor="@android:color/white" />
     </LinearLayout>
 </FrameLayout>
