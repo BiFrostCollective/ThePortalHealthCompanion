@@ -47,7 +47,11 @@
             android:name=".FoodScannerActivity"
             android:exported="true" />
 
+        <!-- Declare ManualEntryActivity -->
+        <activity
+            android:name=".ManualEntryActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
-
