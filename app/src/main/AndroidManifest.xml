@@ -4,7 +4,6 @@
 
     <!-- Add Camera Permission -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Declare camera feature (not required for all devices) -->
     <uses-feature android:name="android.hardware.camera" android:required="false" />
