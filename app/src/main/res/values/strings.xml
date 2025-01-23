@@ -32,5 +32,7 @@
     <string name="search_button_description">Search for recipes</string>
     <string name="logo">Logo</string>
     <string name="the_portal">The Portal</string>
+    <string name="forgot_email">Forgot Email?</string>
+    <string name="forgot_password">Forgot Password?</string>
 
 </resources>
