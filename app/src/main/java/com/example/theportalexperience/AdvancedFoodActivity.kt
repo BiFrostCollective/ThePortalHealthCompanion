@@ -33,6 +33,13 @@ class AdvancedFoodActivity : AppCompatActivity() {
                 val intent = Intent(this, FoodScannerActivity::class.java)
                 startActivity(intent)
             }
+
+            // Manual Entry button
+            val manualEntryButton = findViewById<Button>(R.id.btnManualEntry)
+            manualEntryButton.setOnClickListener {
+                val intent = Intent(this, ManualEntryActivity::class.java)
+                startActivity(intent)
+            }
         } catch (e: Exception) {
             e.printStackTrace() // Log the exception to see the root cause
         }
