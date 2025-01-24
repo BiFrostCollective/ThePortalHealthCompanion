@@ -36,9 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="80dp"
-            android:backgroundTint="#4CAF50"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="64dp"
+            android:backgroundTint="#3A893F"
             android:text="@string/logout" />
     </RelativeLayout>
 
@@ -47,7 +47,7 @@
         android:layout_width="153dp"
         android:layout_height="87dp"
         android:layout_marginTop="320dp"
-        android:backgroundTint="#4CAF50"
+        android:backgroundTint="#3A893F"
         android:text="@string/advanced_food"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
         android:layout_width="153dp"
         android:layout_height="87dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="#4CAF50"
+        android:backgroundTint="#3A893F"
         android:text="@string/recipe"
         app:layout_constraintBottom_toTopOf="@+id/navBottom"
         app:layout_constraintEnd_toEndOf="parent"
