@@ -154,12 +154,12 @@
                 android:layout_weight="1"
                 android:src="@drawable/dinner"
                 android:scaleType="fitCenter"
-                android:contentDescription="@string/dinner_picture" />
+                android:contentDescription="@string/picture" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dinner_text"
+                android:src="@drawable/dinner"
                 android:textSize="16sp"
                 android:padding="8dp" />
 
@@ -220,7 +220,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/picture"
-                android:src="@drawable/starterdishes" />
+                android:src="@drawable/starterDishes" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -241,7 +241,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/picture"
-                android:src="@drawable/sidedish" />
+                android:src="@drawable/sideDishes" />
 
             <TextView
                 android:layout_width="wrap_content"
