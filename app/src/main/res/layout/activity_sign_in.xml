@@ -68,8 +68,8 @@
         android:id="@+id/signInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_transparent_border"
         android:text="@string/sign_in"
-        android:backgroundTint="@color/purple"
         android:textColor="@android:color/white"
         android:layout_marginBottom="8dp"/>
 
