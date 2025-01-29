@@ -41,12 +41,12 @@ class RecipeAndDietActivity : AppCompatActivity() {
         }
 
         // (SS) Adding click listener for the search button to open SearchFragment
-        val searchButton = findViewById<MaterialButton>(R.id.searchButton)
-        searchButton.setOnClickListener {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, SearchFragment.newInstance())
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
+//        val searchButton = findViewById<MaterialButton>(R.id.searchButton)
+//        searchButton.setOnClickListener {
+//            val transaction = supportFragmentManager.beginTransaction()
+//            transaction.replace(R.id.frame_layout, SearchFragment.newInstance())
+//            transaction.addToBackStack(null)
+//            transaction.commit()
+//        }
     }
 }

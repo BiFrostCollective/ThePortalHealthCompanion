@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
 import androidx.fragment.app.Fragment
+import java.util.Locale
 
 class SearchFragment : Fragment() {
 
@@ -27,8 +28,8 @@ class SearchFragment : Fragment() {
         val mockData = listOf("Recipe 1", "Recipe 2", "Recipe 3", "Diet Plan A", "Diet Plan B")
 
         searchButton.setOnClickListener {
-            val searchQuery = searchEditText.text.toString().toLowerCase()
-            val filteredResults = mockData.filter { it.toLowerCase().contains(searchQuery) }
+            val searchQuery = searchEditText.text.toString().lowercase(Locale.getDefault())
+            val filteredResults = mockData.filter { it.lowercase(Locale.getDefault()).contains(searchQuery) }
             val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, filteredResults)
             searchResultsListView.adapter = adapter
         }
