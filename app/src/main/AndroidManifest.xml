@@ -8,6 +8,7 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -46,6 +47,13 @@
         <activity
             android:name=".FoodScannerActivity"
             android:exported="true" />
+
+        <!-- Declare ManualEntryActivity -->
+        <activity
+            android:name=".ManualEntryActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
+

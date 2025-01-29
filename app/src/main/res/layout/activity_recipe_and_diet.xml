@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecipeAndDietActivity"
-    android:background="@drawable/healthyfood6"
-    >
+    tools:context=".RecipeAndDietActivity">
 
+    <!-- Title -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -17,306 +16,324 @@
         android:text="Recipe Guide"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.708"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
+    <!-- Subtitle -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="108dp"
         android:text="All Recipes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Search Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:contentDescription="@string/search_button_description"
-        app:icon="@drawable/ic_search"
-        app:iconGravity="textStart"
-        app:iconPadding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        style="@style/Widget.MaterialComponents.Button.TextButton" />
-
-    <!-- Tab-like Interface -->
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabContainer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/searchButton"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tabMode="fixed"
-        app:tabGravity="fill"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Courses" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Categories" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Favorites" />
-
-    </com.google.android.material.tabs.TabLayout>
-
-
-    <!-- Grid for Recipe Categories -->
-    <FrameLayout
-        android:id="@+id/recipeCategoriesContainer"
-        android:layout_width="0dp"
+    <!-- Recipe Grid -->
+    <GridLayout
+        android:id="@+id/recipeGrid"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tabContainer"
-        app:layout_constraintBottom_toTopOf="@id/navBottom"
+        android:layout_margin="8dp"
+        android:columnCount="3"
+        android:rowCount="3"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp">
+        app:layout_constraintBottom_toTopOf="@id/navBottom"
+        android:paddingTop="16dp">
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="3"
-            android:rowCount="3"
+        <!-- Breakfast CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
             android:layout_margin="8dp">
 
-            <!-- Breakfast -->
             <LinearLayout
-                android:id="@+id/breakfastContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Breakfast"
                     android:src="@drawable/breakfast"
-                    android:contentDescription="@string/picture"
-                    />
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Breakfast" />
+                    android:text="Breakfast"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- Lunch -->
+        <!-- Lunch CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/lunchContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/lunch" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Lunch"
+                    android:src="@drawable/lunch"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lunch" />
+                    android:text="Lunch"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- Dinner -->
+        <!-- Dinner CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/dinnerContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/dinner" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Dinner"
+                    android:src="@drawable/dinner"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dinner" />
+                    android:text="Dinner"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- Desserts -->
+        <!-- Desserts CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/dessertContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/dessert" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Desserts"
+                    android:src="@drawable/dessert"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Desserts" />
+                    android:text="Desserts"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- BBQ -->
+        <!-- BBQ CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/bbqContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/bbq" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="BBQ"
+                    android:src="@drawable/bbq"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BBQ" />
+                    android:text="BBQ"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- Starter Dishes -->
+        <!-- Starter Dishes CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/starterDishesContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/starterdishes" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Starter Dishes"
+                    android:src="@drawable/starterDishes"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Starter Dishes" />
+                    android:text="Starter Dishes"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- Side Dishes -->
+        <!-- Side Dishes CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/sideDishesContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/sidedish" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Side Dishes"
+                    android:src="@drawable/sideDishes"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Side Dishes" />
+                    android:text="Side Dishes"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- Snacks -->
+        <!-- Snacks CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/snacksContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/snacks" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Snacks"
+                    android:src="@drawable/snacks"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Snacks" />
+                    android:text="Snacks"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <!-- Drinks -->
+        <!-- Drinks CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:id="@+id/drinksContainer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:padding="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/picture"
-                    android:src="@drawable/drinks" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Drinks"
+                    android:src="@drawable/drinks"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Drinks" />
+                    android:text="Drinks"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        </GridLayout>
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navBottom"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/navBottom"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

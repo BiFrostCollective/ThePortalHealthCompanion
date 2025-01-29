@@ -22,6 +22,15 @@ class SettingsFragment : Fragment() {
         saveButton.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
+        val privacySecurity: ImageButton = view.findViewById(R.id.privacyButton)
+        privacySecurity.setOnClickListener{
+            val fragment = PrivacyandSecurityFragment()
+            val fragmentTransaction = parentFragmentManager.beginTransaction()
+
+            fragmentTransaction.replace(R.id.frame_layout, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
         // Inflate the layout for this fragment
         return view
     }
