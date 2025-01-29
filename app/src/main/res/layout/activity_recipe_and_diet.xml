@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -5,6 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".RecipeAndDietActivity">
 
     <!-- Title -->
@@ -33,6 +35,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
+    <!-- Search Button -->
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95" />
+
+    <!-- Tab-like Interface -->
+    <LinearLayout
+        android:id="@+id/tabContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/searchButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Courses" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Categories" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Favorites" />
+
+    </LinearLayout>
+
     <!-- Recipe Grid -->
     <GridLayout
         android:id="@+id/recipeGrid"
@@ -41,7 +85,7 @@
         android:layout_margin="8dp"
         android:columnCount="3"
         android:rowCount="3"
-        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintTop_toBottomOf="@id/tabContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/navBottom"
@@ -336,4 +380,14 @@
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navBottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
