@@ -1,7 +1,8 @@
 package com.example.theportalexperience
 
-
 import android.os.Bundle
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -48,5 +49,60 @@ class RecipeAndDietActivity : AppCompatActivity() {
             transaction.addToBackStack(null)
             transaction.commit()
         }
+
+        // (SS) New code for ImageButton click listeners Find all ImageButtons by their IDs
+        val breakfastButton = findViewById<ImageButton>(R.id.breakfastButton)
+        val lunchButton = findViewById<ImageButton>(R.id.lunchButton)
+        val dinnerButton = findViewById<ImageButton>(R.id.dinnerButton)
+        val dessertsButton = findViewById<ImageButton>(R.id.dessertsButton)
+        val bbqButton = findViewById<ImageButton>(R.id.bbqButton)
+        val appetizerButton = findViewById<ImageButton>(R.id.appetizerButton)
+        val sideDishesButton = findViewById<ImageButton>(R.id.sideDishesButton)
+        val snacksButton = findViewById<ImageButton>(R.id.snacksButton)
+        val drinksButton = findViewById<ImageButton>(R.id.drinksButton)
+
+        // (SS) Set click listeners for each button
+        breakfastButton.setOnClickListener {
+            navigateToFragment(BreakfastFragment.newInstance())
+        }
+
+        lunchButton.setOnClickListener {
+            navigateToFragment(LunchFragment.newInstance())
+        }
+
+        dinnerButton.setOnClickListener {
+            navigateToFragment(DinnerFragment.newInstance())
+        }
+
+        dessertsButton.setOnClickListener {
+            navigateToFragment(DessertsFragment.newInstance())
+        }
+
+        bbqButton.setOnClickListener {
+            navigateToFragment(BBQFragment.newInstance())
+        }
+
+        appetizerButton.setOnClickListener {
+            navigateToFragment(AppetizerFragment.newInstance())
+        }
+
+        sideDishesButton.setOnClickListener {
+            navigateToFragment(SideDishesFragment.newInstance())
+        }
+
+        snacksButton.setOnClickListener {
+            navigateToFragment(SnacksFragment.newInstance())
+        }
+
+        drinksButton.setOnClickListener {
+            navigateToFragment(DrinksFragment.newInstance())
+        }
+    }
+    // Helper function to navigate to a fragment
+    private fun navigateToFragment(fragment: androidx.fragment.app.Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_layout, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }
