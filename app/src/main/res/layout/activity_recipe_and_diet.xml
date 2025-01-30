@@ -330,7 +330,6 @@
                 android:gravity="center"
                 android:padding="8dp">
 
-<<<<<<< HEAD
                 <ImageButton
                     android:id="@+id/appetizerButton"
                     android:layout_width="100dp"
@@ -341,14 +340,6 @@
                     android:background="@android:color/transparent"
                     android:clickable="true"
                     android:focusable="true" />
-=======
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:contentDescription="Starter Dishes"
-                    android:src="@drawable/starterdishes"
-                    android:scaleType="centerCrop" />
->>>>>>> c829ab7 (Integration of Sean and Robert's code for Recipe and Diet and also getting Trokens Changed Tested as well.)
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -383,14 +374,10 @@
                     android:layout_height="80dp"
                     android:contentDescription="Side Dishes"
                     android:src="@drawable/sidedishes"
-<<<<<<< HEAD
                     android:scaleType="centerCrop"
                     android:background="@android:color/transparent"
                     android:clickable="true"
                     android:focusable="true" />
-=======
-                    android:scaleType="centerCrop" />
->>>>>>> c829ab7 (Integration of Sean and Robert's code for Recipe and Diet and also getting Trokens Changed Tested as well.)
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -479,7 +466,6 @@
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
-<<<<<<< HEAD
 
     <!-- (SS) -->
     <FrameLayout
@@ -504,14 +490,3 @@
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navBottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> c829ab7 (Integration of Sean and Robert's code for Recipe and Diet and also getting Trokens Changed Tested as well.)
