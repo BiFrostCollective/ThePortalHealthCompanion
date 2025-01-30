@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".PrivacyandSecurityFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Help and Support"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <ScrollView
+        android:layout_width="353dp"
+        android:layout_height="577dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="We’re here to ensure that your experience with The Portal is as smooth and enjoyable as possible. Whether you have a question, need assistance with a feature, or encounter an issue, we’ve got you covered. This Help and Support section provides you with various resources to get the help you need.\n"
+                />
+            <TextView
+                android:id="@+id/textViewSection1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="1. Getting Started\n\nIf you're new to the app, we've created helpful guides and tutorials to help you get started quickly:\n\n• How to Set Up Your Profile: Learn how to create and personalize your account to suit your food preferences, wellness goals, and lifestyle.\n\n• Navigating the App: Familiarize yourself with the key features of the app, from tracking meals and workouts to receiving personlized recommendations.\n\n• Setting Goals: Undestand how to set and track your health and wellness goals within the app.\n\n"
+                android:lineSpacingMultiplier="1.1"
+                />
+
+            <TextView
+                android:id="@+id/textViewSection2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="2. FAQs (Frequently Asked Questions)\n\nBefore reaching out for assistance, you might find an immediate answer to your question in our FAQs. Some of the most common topics include:\n\n• Account Management: How to update information, reset your password, and manage privacy settings.\n\n• Meal and Wellness Tracking: How to log meals, exercises, and track your progress.\n\n• Subscription and Billing: Information on subscription plans, payment methods, and how to manage your account billing.\n\n• Technical issues: Troubleshooting tips for app crashes, performance issues, and syncing problems.\n\n"
+                android:lineSpacingMultiplier="1.1" />
+
+
+            <TextView
+                android:id="@+id/textViewSection3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="3. Live Chat Support\n\nFor immediate assistance, we offer a Live Chat feature available directly within the app. Our friendly support team is available 9AM - 9PM EST to help with any questions or issues you may have. To start a chat, simply tap the Help and Support button within the app's settings, and one of our agents will be with you shortly.\n\n"
+                android:lineSpacingMultiplier="1.1" />
+
+            <TextView
+                android:id="@+id/textViewSection4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="4. Email Support\n\nIf you need more in-depth assistance or would prefer to communicate via email, you can reach our support team. When emailing, please provide the following information to help us resolve your issue as quickly as possible:\n\n• Your username or email address associated with your account.\n• A detailed description of the issue or question.\n• Any error messages or screenshots that may help us better understand the problem.\n\nWe strive to respond to all emails within 48 hours, but please allow us up to 3-5 buisness days for a complete response during peak times.\n\n"
+                android:lineSpacingMultiplier="1.1" />
+
+            <TextView
+                android:id="@+id/textViewSection5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="5. Troubleshooting and Known Issues\n\nWe understand that sometimes things don't go as planned, so we've compiled a list of common troubleshooting steps and known issues:\n\n•App Not Launching or Crashing: Ensure that your app is up-to-date. If the issue persists, try reinstalling the app or restarting your device.\n\n• Syncing Problems: Check your internet connection and ensure that your device's software is up-to-date. You can also try logging out and back in to re-sync your data.\n\n• Slow Performance: If the app is running slowly, closing other apps or clearing cache data may help improve performance.\n\n"
+                android:lineSpacingMultiplier="1.1" />
+
+            <TextView
+                android:id="@+id/textViewSection6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="6. Feedback and Suggestions\n\nWe are constantly working to improve the app and your experience. If you have any feedback or suggestions, we'd love to hear from you! You can submit feedback at our email address.\n\n"
+                android:lineSpacingMultiplier="1.1" />
+
+            <TextView
+                android:id="@+id/textViewSection7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="7. Privacy and Security Concerns\n\nIf you have any questions or concerns related to the privacy and security of your personal data, please review our Privacy and Security policy. For further inquiries or to report any security issues, dont hesitate to contact us directly.\n\n"
+                android:lineSpacingMultiplier="1.1" />
+
+            <TextView
+                android:id="@+id/textViewSection8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="8. Contact Us\n\nIf you cannot find a solution to your problem or have a unique inquiry, we are here to help. You can contact us through the following channels:\n\n• Phone Support: 555-555-5555 (Available during 9am - 9pm EST\n\n•Social Media: Reach out to us on our offical social media channels."
+                android:lineSpacingMultiplier="1.1" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

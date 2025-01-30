@@ -42,15 +42,15 @@
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="At The Portal, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy and Security policy outlines how we collect, use, and safeguard your data to provide a safe and personalized experience while using our app.
-
-"
+                android:textColor="#000000"
+                android:text="At The Portal, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy and Security policy outlines how we collect, use, and safeguard your data to provide a safe and personalized experience while using our app.\n"
                 />
             <TextView
                 android:id="@+id/textViewSection1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. Data Collection\n\nWe collect information that you provide to us directly when you register for an account, use our services, or interact with the app. The types of data we may collect include:\n• Personal Information: Name, email, phone number, etc.\n• Health and Wellness Data: Dietary preferences, fitness goals, meal logs.\n• Device Information: Operating system, device model, app usage analytics.\n• Location Data: With consent, location data for local services.\n\n"
+                android:textColor="#000000"
+                android:text="1. Data Collection\n\nWe collect information that you provide to us directly when you register for an account, use our services, or interact with the app. The types of data we may collect include:\n\n• Personal Information: Name, email, phone number, etc.\n\n• Health and Wellness Data: Dietary preferences, fitness goals, meal logs.\n\n• Device Information: Operating system, device model, app usage analytics.\n\n• Location Data: With consent, location data for local services.\n\n"
                 android:lineSpacingMultiplier="1.1"
                />
 
@@ -58,7 +58,8 @@
                 android:id="@+id/textViewSection2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2. How We Use Your Data\n\nWe use the data we collect to provide, personalize, and improve your experience within the app. The primary purposes include:\n• Personalization\n• Communication\n• Improvement and Research\n• Support\n\n"
+                android:textColor="#000000"
+                android:text="2. How We Use Your Data\n\nWe use the data we collect to provide, personalize, and improve your experience within the app. The primary purposes include:\n\n• Personalization\n• Communication\n• Improvement and Research\n• Support\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
 
@@ -66,34 +67,39 @@
                 android:id="@+id/textViewSection3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3. Data Security\n\nWe take the security of your data seriously and implement various measures to protect it. These include:\n• Encryption: Industry-standard encryption during transmission.\n• Secure Storage: Sensitive information stored securely.\n• Two-Factor Authentication (2FA): Recommended for extra protection.\n• Access Control: Only authorized personnel can access your data.\n\n"
+                android:textColor="#000000"
+                android:text="3. Data Security\n\nWe take the security of your data seriously and implement various measures to protect it. These include:\n\n• Encryption: Industry-standard encryption during transmission.\n\n• Secure Storage: Sensitive information stored securely.\n\n• Two-Factor Authentication (2FA): Recommended for extra protection.\n\n• Access Control: Only authorized personnel can access your data.\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
             <TextView
                 android:id="@+id/textViewSection4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4. Third-Party Services\n\nWe may work with third-party providers to offer certain features or services within the app. These third-party services may have access to your data, but we ensure they comply with strict data protection standards. For example:\n• Payment Processors\n• Analytics Providers\n• Cloud Services\n\nWe only share your data with third-party providers as necessary and never sell or rent your personal information to others.\n\n"
+                android:textColor="#000000"
+                android:text="4. Third-Party Services\n\nWe may work with third-party providers to offer certain features or services within the app. These third-party services may have access to your data, but we ensure they comply with strict data protection standards. For example:\n\n• Payment Processors\n• Analytics Providers\n• Cloud Services\n\nWe only share your data with third-party providers as necessary and never sell or rent your personal information to others.\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
             <TextView
                 android:id="@+id/textViewSection5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="5. Your Rights and Control\n\nYou have full control over your data and can manage your privacy settings directly in the app. Specifically, you can:\n• Access, Update, or Delete Your Information\n• Opt-Out of Communications\n• Manage Data Sharing\n\n"
+                android:textColor="#000000"
+                android:text="5. Your Rights and Control\n\nYou have full control over your data and can manage your privacy settings directly in the app. Specifically, you can:\n\n• Access, Update, or Delete Your Information\n• Opt-Out of Communications\n• Manage Data Sharing\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
             <TextView
                 android:id="@+id/textViewSection6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="6. Cookies and Tracking Technologies\n\nWe use cookies and similar tracking technologies to enhance your app experience. These technologies help us:\n• Keep you logged into your account.\n• Analyze how you use the app for performance improvements.\n• Personalize content and recommendations.\n\nYou can control cookie settings through your device or browser, though disabling cookies may impact certain app features.\n\n"
+                android:textColor="#000000"
+                android:text="6. Cookies and Tracking Technologies\n\nWe use cookies and similar tracking technologies to enhance your app experience. These technologies help us:\n\n• Keep you logged into your account.\n• Analyze how you use the app for performance improvements.\n• Personalize content and recommendations.\n\nYou can control cookie settings through your device or browser, though disabling cookies may impact certain app features.\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
             <TextView
                 android:id="@+id/textViewSection7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="7. Children’s Privacy\n\nOur app is not intended for use by children under the age of 13. We do not knowingly collect or solicit any personal information from children. If we become aware that we have inadvertently collected personal data from a child under 13, we will take steps to delete such information as quickly as possible.\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
@@ -101,6 +107,7 @@
                 android:id="@+id/textViewSection8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="8. Changes to This Privacy and Security Policy\n\nWe may update this policy from time to time to reflect changes in our services or to comply with new legal requirements. We will notify you of any significant changes through in-app notifications or email. We encourage you to review this policy periodically to stay informed about how we are protecting your data.\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
@@ -108,6 +115,7 @@
                 android:id="@+id/textViewSection9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="9. Contact Us\n\nIf you have any questions or concerns regarding our Privacy and Security policy, please feel free to contact us. We are here to assist you.\n\n"
                 android:lineSpacingMultiplier="1.1" />
 
