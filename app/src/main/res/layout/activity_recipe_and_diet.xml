@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".RecipeAndDietActivity">
 
-    <!-- Title -->
+    <!-- (SS) Title -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
@@ -24,7 +24,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp" />
 
-    <!-- Subtitle -->
+    <!-- (SS) Subtitle -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="0dp"
@@ -38,8 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="16dp" />
 
-    <!-- Search Button -->
-    <Button
+    <!-- (SS)Search Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -55,7 +55,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp" />
 
-    <!-- Tab-like Interface -->
+    <!-- (SS) Tab-like Interface -->
     <LinearLayout
         android:id="@+id/tabContainer"
         android:layout_width="0dp"
@@ -108,7 +108,7 @@
             android:textAllCaps="false" />
     </LinearLayout>
 
-    <!-- Recipe Grid -->
+    <!-- (SS) Recipe Grid -->
     <GridLayout
         android:id="@+id/recipeGrid"
         android:layout_width="match_parent"
@@ -123,7 +123,7 @@
         android:paddingTop="16dp">
 
 
-        <!-- Breakfast CardView -->
+        <!-- (SS) Breakfast CardView -->
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -162,7 +162,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Lunch CardView -->
+        <!--(SS)  Lunch CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -200,7 +200,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Dinner CardView -->
+        <!-- (SS) Dinner CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -238,7 +238,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Desserts CardView -->
+        <!-- (SS) Desserts CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -276,7 +276,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- BBQ CardView -->
+        <!-- (SS) BBQ CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -314,7 +314,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Appetizer CardView -->
+        <!-- (SS) Appetizer CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -352,7 +352,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Side Dishes CardView -->
+        <!-- (SS) Side Dishes CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -390,7 +390,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Snacks CardView -->
+        <!-- (SS) Snacks CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -428,7 +428,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Drinks CardView -->
+        <!-- (SS)Drinks CardView -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -468,7 +468,19 @@
 
     </GridLayout>
 
-    <!-- Bottom Navigation -->
+    <!-- (SS) -->
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/recipeGrid"
+        app:layout_constraintBottom_toTopOf="@id/navBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- (SS)Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navBottom"
         android:layout_width="0dp"

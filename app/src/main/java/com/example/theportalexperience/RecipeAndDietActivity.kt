@@ -8,6 +8,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
+import com.example.theportalexperience.BreakfastFragment
+import com.example.theportalexperience.LunchFragment
+import com.example.theportalexperience.DinnerFragment
+import com.example.theportalexperience.DessertsFragment
+import com.example.theportalexperience.BBQFragment
+import com.example.theportalexperience.AppetizerFragment
+import com.example.theportalexperience.SoupFragment
+import com.example.theportalexperience.SnacksFragment
+import com.example.theportalexperience.DrinksFragment
 
 class RecipeAndDietActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,38 +72,47 @@ class RecipeAndDietActivity : AppCompatActivity() {
 
         // (SS) Set click listeners for each button
         breakfastButton.setOnClickListener {
+            Toast.makeText(this, "Breakfast Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(BreakfastFragment.newInstance())
         }
 
         lunchButton.setOnClickListener {
+            Toast.makeText(this, "Lunch Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(LunchFragment.newInstance())
         }
 
         dinnerButton.setOnClickListener {
+            Toast.makeText(this, "Dinner Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(DinnerFragment.newInstance())
         }
 
         dessertsButton.setOnClickListener {
+            Toast.makeText(this, "Desserts Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(DessertsFragment.newInstance())
         }
 
         bbqButton.setOnClickListener {
+            Toast.makeText(this, "BBQ Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(BBQFragment.newInstance())
         }
 
         appetizerButton.setOnClickListener {
+            Toast.makeText(this, "Appetizer Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(AppetizerFragment.newInstance())
         }
 
         sideDishesButton.setOnClickListener {
-            navigateToFragment(SideDishesFragment.newInstance())
+            Toast.makeText(this, "Side Dishes Button Clicked", Toast.LENGTH_SHORT).show()
+            navigateToFragment(SoupFragment.newInstance())
         }
 
         snacksButton.setOnClickListener {
+            Toast.makeText(this, "Snacks Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(SnacksFragment.newInstance())
         }
 
         drinksButton.setOnClickListener {
+            Toast.makeText(this, "Drinks Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(DrinksFragment.newInstance())
         }
     }
