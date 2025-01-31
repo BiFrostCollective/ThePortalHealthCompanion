@@ -51,7 +51,7 @@ class RecipeAndDietActivity : AppCompatActivity() {
         }
 
         // (SS) Adding click listener for the search button to open SearchFragment
-<<<<<<< HEAD
+        // HEAD
         val searchButton = findViewById<MaterialButton>(R.id.searchButton)
         searchButton.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
