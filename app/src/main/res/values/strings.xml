@@ -19,7 +19,21 @@
     <string name="manual_entry">Manual Entry</string>
     <string name="daily_intake_values">Daily intake values</string>
     <string name="save">Save</string>
-    <string name="picture">picture</string>
+    <string name="picture">Image of recipe category</string>
     <string name="button">Button</string>
     <string name="dropdown">dropdown</string>
+
+    <string name="profile_details">Profile Details</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="cancel">Cancel</string>
+
+    <!--SS Added these new strings for the search button SS-->
+    <string name="search_button_description">Search for recipes</string>
+    <string name="logo">Logo</string>
+    <string name="the_portal">The Portal</string>
+    <string name="forgot_email">Forgot Email?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="confirm_password">Confirm Password</string>
+
 </resources>

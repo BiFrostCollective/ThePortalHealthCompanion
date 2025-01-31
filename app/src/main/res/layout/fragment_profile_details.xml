@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/frame_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context=".ProfileDetailsFragment"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/profile_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/profile_details"
+        android:textSize="36sp"
+        android:textStyle="bold|italic"/>
+
+    <LinearLayout
+        android:layout_width="364dp"
+        android:layout_height="528dp"
+        android:paddingTop="40dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <EditText
+            android:id="@+id/fName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:hint="@string/first_name" />
+
+        <EditText
+            android:id="@+id/lName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:hint="@string/last_name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="35dp"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:layout_marginHorizontal="50dp"
+            />
+
+
+        <Button
+            android:id="@+id/cancel_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            />
+
+    </LinearLayout>
+
+
+</FrameLayout>
