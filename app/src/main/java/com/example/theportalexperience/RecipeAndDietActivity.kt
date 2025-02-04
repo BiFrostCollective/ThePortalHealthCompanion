@@ -50,8 +50,6 @@ class RecipeAndDietActivity : AppCompatActivity() {
             }
         }
 
-        // (SS) Adding click listener for the search button to open SearchFragment
-        // HEAD
         val searchButton = findViewById<MaterialButton>(R.id.searchButton)
         searchButton.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
@@ -60,7 +58,6 @@ class RecipeAndDietActivity : AppCompatActivity() {
             transaction.commit()
         }
 
-        // (SS) New code for ImageButton click listeners Find all ImageButtons by their IDs
         val breakfastButton = findViewById<ImageButton>(R.id.breakfastButton)
         val lunchButton = findViewById<ImageButton>(R.id.lunchButton)
         val dinnerButton = findViewById<ImageButton>(R.id.dinnerButton)
@@ -71,7 +68,6 @@ class RecipeAndDietActivity : AppCompatActivity() {
         val snacksButton = findViewById<ImageButton>(R.id.snacksButton)
         val drinksButton = findViewById<ImageButton>(R.id.drinksButton)
 
-        // (SS) Set click listeners for each button
         breakfastButton.setOnClickListener {
             Toast.makeText(this, "Breakfast Button Clicked", Toast.LENGTH_SHORT).show()
             navigateToFragment(BreakfastFragment.newInstance())
@@ -117,20 +113,11 @@ class RecipeAndDietActivity : AppCompatActivity() {
             navigateToFragment(DrinksFragment.newInstance())
         }
     }
-    // Helper function to navigate to a fragment
+
     private fun navigateToFragment(fragment: androidx.fragment.app.Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_layout, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-=======
-//        val searchButton = findViewById<MaterialButton>(R.id.searchButton)
-//        searchButton.setOnClickListener {
-//            val transaction = supportFragmentManager.beginTransaction()
-//            transaction.replace(R.id.frame_layout, SearchFragment.newInstance())
-//            transaction.addToBackStack(null)
-//            transaction.commit()
-//        }
->>>>>>> c829ab7 (Integration of Sean and Robert's code for Recipe and Diet and also getting Trokens Changed Tested as well.)
     }
 }

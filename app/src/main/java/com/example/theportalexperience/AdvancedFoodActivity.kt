@@ -27,23 +27,32 @@ class AdvancedFoodActivity : AppCompatActivity() {
                 videoView.start()
             }
 
-            // Scan My Food button
+            // ✅ Scan My Food button - Navigates to the Camera Scanner Page
             val scanButton = findViewById<Button>(R.id.btnScanFood)
             scanButton.setOnClickListener {
                 val intent = Intent(this, FoodScannerActivity::class.java)
                 startActivity(intent)
             }
 
-            // Manual Entry button
+            // ✅ Food Inventory button - Navigates to the Food Inventory Page
+            val btnFoodInventory: Button = findViewById(R.id.btnFoodInventory)
+            btnFoodInventory.setOnClickListener {
+                val intent = Intent(this, FoodInventoryActivity::class.java)
+                startActivity(intent)
+            }
+
+            // ✅ Manual Entry button - Navigates to the Manual Entry Page
             val manualEntryButton = findViewById<Button>(R.id.btnManualEntry)
             manualEntryButton.setOnClickListener {
                 val intent = Intent(this, ManualEntryActivity::class.java)
                 startActivity(intent)
             }
+
         } catch (e: Exception) {
-            e.printStackTrace() // Log the exception to see the root cause
+            e.printStackTrace() // Log the exception to debug errors
         }
 
+        // ✅ Bottom Navigation Menu Setup
         val bottomNav = findViewById<BottomNavigationView>(R.id.navBottom)
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {

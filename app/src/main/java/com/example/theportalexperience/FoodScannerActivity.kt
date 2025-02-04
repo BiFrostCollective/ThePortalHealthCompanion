@@ -6,34 +6,42 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import androidx.annotation.OptIn
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ExperimentalGetImage
-import androidx.camera.core.ImageAnalysis
-import androidx.camera.core.ImageProxy
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.camera.view.PreviewView
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.mlkit.vision.barcode.Barcode
+import androidx.lifecycle.LifecycleOwner
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class FoodScannerActivity : AppCompatActivity() {
-
-    private lateinit var previewView: PreviewView
     private lateinit var cameraExecutor: ExecutorService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_scanner)
 
-        previewView = findViewById(R.id.preview_View)
+        val btnClose: Button = findViewById(R.id.btnClose)
+        btnClose.setOnClickListener {
+            finish()
+        }
+
+        requestCameraPermission()
         cameraExecutor = Executors.newSingleThreadExecutor()
+    }
+
+    private fun requestCameraPermission() {
+        val requestPermissionLauncher =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+                if (isGranted) {
+                    startCamera()
+                } else {
+                    Toast.makeText(this, "Camera permission denied", Toast.LENGTH_LONG).show()
+                }
+            }
 
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -42,100 +50,48 @@ class FoodScannerActivity : AppCompatActivity() {
         ) {
             startCamera()
         } else {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.CAMERA),
-                CAMERA_PERMISSION_REQUEST_CODE
-            )
-        }
-
-        findViewById<Button>(R.id.btnScan).setOnClickListener {
-            Toast.makeText(this, "Scan functionality triggered!", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == CAMERA_PERMISSION_REQUEST_CODE &&
-            grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED
-        ) {
-            startCamera()
-        } else {
-            Toast.makeText(this, "Camera permission denied.", Toast.LENGTH_SHORT).show()
+            requestPermissionLauncher.launch(Manifest.permission.CAMERA)
         }
     }
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
-
         cameraProviderFuture.addListener({
-            val cameraProvider = cameraProviderFuture.get()
+            val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
             val preview = Preview.Builder().build().also {
-                it.surfaceProvider = previewView.surfaceProvider
+                it.setSurfaceProvider(findViewById<androidx.camera.view.PreviewView>(R.id.viewFinder).surfaceProvider)
             }
 
-            val imageAnalyzer = ImageAnalysis.Builder()
-                .build()
-                .also {
-                    it.setAnalyzer(cameraExecutor) { imageProxy ->
-                        processImageProxy(imageProxy)
-                    }
+            val imageAnalyzer = ImageAnalysis.Builder().build().also {
+                it.setAnalyzer(cameraExecutor) { imageProxy ->
+                    processImageProxy(imageProxy)
                 }
+            }
 
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-
-            try {
-                cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(
-                    this,
-                    cameraSelector,
-                    preview,
-                    imageAnalyzer
-                )
-            } catch (e: Exception) {
-                Log.e(TAG, "Use case binding failed", e)
-            }
+            cameraProvider.bindToLifecycle(this as LifecycleOwner, cameraSelector, preview, imageAnalyzer)
         }, ContextCompat.getMainExecutor(this))
     }
 
-    @OptIn(ExperimentalGetImage::class)
     private fun processImageProxy(imageProxy: ImageProxy) {
         val mediaImage = imageProxy.image
         if (mediaImage != null) {
             val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
             val scanner = BarcodeScanning.getClient()
-
             scanner.process(image)
                 .addOnSuccessListener { barcodes ->
                     for (barcode in barcodes) {
-                        barcode.rawValue?.let {
-                            Log.d(TAG, "Barcode detected: $it")
-                        }
+                        Log.d("FoodScanner", "Scanned: ${barcode.displayValue}")
+                        Toast.makeText(this, "Scanned: ${barcode.displayValue}", Toast.LENGTH_SHORT).show()
+                        break
                     }
                 }
                 .addOnFailureListener {
-                    Log.e(TAG, "Barcode detection failed", it)
+                    Log.e("FoodScanner", "Error scanning barcode", it)
                 }
                 .addOnCompleteListener {
                     imageProxy.close()
                 }
-        } else {
-            imageProxy.close()
         }
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        cameraExecutor.shutdown()
-    }
-
-    companion object {
-        private const val TAG = "FoodScannerActivity"
-        private const val CAMERA_PERMISSION_REQUEST_CODE = 100
-    }
 }
-
