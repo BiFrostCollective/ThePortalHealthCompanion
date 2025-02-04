@@ -52,6 +52,12 @@ class AdvancedFoodActivity : AppCompatActivity() {
             e.printStackTrace() // Log the exception to debug errors
         }
 
+        val dailyIntakeButton = findViewById<Button>(R.id.btnDailyIntake)
+        dailyIntakeButton.setOnClickListener {
+            val intent = Intent(this, DailyIntakeActivity::class.java)
+            startActivity(intent)
+        }
+
         // ✅ Bottom Navigation Menu Setup
         val bottomNav = findViewById<BottomNavigationView>(R.id.navBottom)
         bottomNav.setOnItemSelectedListener { item ->

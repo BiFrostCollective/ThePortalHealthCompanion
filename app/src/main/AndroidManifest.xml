@@ -54,6 +54,8 @@
             android:exported="true" />
 
         <activity android:name=".FoodInventoryActivity" />
+        <activity android:name=".DailyIntakeActivity" />
+
 
     </application>
 

@@ -51,6 +51,7 @@ class RecipeAndDietActivity : AppCompatActivity() {
         }
 
         // (SS) Adding click listener for the search button to open SearchFragment
+        // HEAD
         val searchButton = findViewById<MaterialButton>(R.id.searchButton)
         searchButton.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
@@ -122,5 +123,14 @@ class RecipeAndDietActivity : AppCompatActivity() {
         transaction.replace(R.id.frame_layout, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
+=======
+//        val searchButton = findViewById<MaterialButton>(R.id.searchButton)
+//        searchButton.setOnClickListener {
+//            val transaction = supportFragmentManager.beginTransaction()
+//            transaction.replace(R.id.frame_layout, SearchFragment.newInstance())
+//            transaction.addToBackStack(null)
+//            transaction.commit()
+//        }
+>>>>>>> c829ab7 (Integration of Sean and Robert's code for Recipe and Diet and also getting Trokens Changed Tested as well.)
     }
 }
